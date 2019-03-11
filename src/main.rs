@@ -2,6 +2,7 @@ use std::env;
 
 mod qobj;
 use qobj::Qobj;
+mod viewer;
 
 fn usage(program_name: &String){
     println!("Usage:\n");
@@ -16,7 +17,6 @@ fn main() {
     }
 
     let qobj_data = &args[1];
-    let qob: Qobj = serde_json::from_str(qobj_data).expect("Couldn't load QObj");
-
-
+    let qobj: Qobj = serde_json::from_str(qobj_data).expect("Couldn't load QObj");
+    viewer::show(qobj);
 }

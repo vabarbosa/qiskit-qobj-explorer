@@ -1,2 +1,10 @@
+Cargo.lock
 /target
 **/*.rs.bk
+node_modules
+static/Gemfile.lock
+static/_site/
+static/_posts/
+static/category/
+static/*~
+

@@ -1,7 +1,6 @@
 use yew::prelude::*;
-
-mod qobj;
-use qobj::Qobj;
+use yew::html;
+use crate::qobj::Qobj;
 
 struct Model {
     value: i64,
@@ -39,7 +38,7 @@ impl Renderable<Model> for Model {
     }
 }
 
-fn show(qobj: Qobj) {
+pub fn show(qobj: Qobj) {
     yew::initialize();
     App::<Model>::new().mount_to_body();
     yew::run_loop();

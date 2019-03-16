@@ -30,10 +30,22 @@ impl Component for Model {
 impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
         html! {
-            <div>
-               <button onclick=|_| Msg::DoIt,>{ "+1" }</button>
-                <p>{ self.value }</p>
-            </div>
+          <script>
+            (function () {
+                var myjson, inter;
+
+                myjson = document.querySelector("#myjson");
+                inter = setInterval(function () {
+                    // Wait for dataChanged observer; Polymer and IE10 have this weird thing.
+                    if (myjson.dataChanged) {
+                        myjson.data = {
+                            "Hola": "Cara de bola"
+                        };
+                        clearInterval(inter);
+                    }
+                }, 1);
+            }());
+          </script>
         }
     }
 }

@@ -3,7 +3,7 @@ use yew::html;
 use yew::virtual_dom::VNode;
 use stdweb::web::Node;
 use stdweb::unstable::TryFrom;
-use qobj::{Qobj, QobjHeader, QobjConfig};
+use crate::qobj::{Qobj, QobjHeader, QobjConfig};
 
 pub enum Msg {
     DoIt,

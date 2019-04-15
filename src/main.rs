@@ -1,10 +1,4 @@
-use std::env;
-
-mod viewer;
-
-#[macro_use]
-extern crate stdweb;
-
+use crate::viewer;
 fn main() {
     viewer::show();
 }
